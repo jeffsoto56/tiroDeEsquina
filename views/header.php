@@ -61,9 +61,9 @@
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Secciones <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Equipo <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="<?php echo URL; ?>seccion/index">Ver Sección</a></li>
+                          <li><a href="<?php echo URL; ?>equipo/agregarEquipo">Agregar Equipo</a></li>
                           <?php if (Session::get('tipoUsuario') < 2){ ?>
                           <li><a href="<?php echo URL; ?>actualizarestudiantes/cargarSeccionesEstudiantes">Cargar Secciones Estudiantes</a></li>
                           <?php }  ?>
@@ -194,7 +194,7 @@
             <div class="row">
                 <div class="col-xs-1"></div>
                 <div class="col-xs-1">
-                    <img src="<?php echo URL; ?>public/img/logoEmpresa.png" alt="Logo Empresa" class="img-rounded pull-left img-responsive">
+                    <img src="<?php echo URL; ?>public/img/logo trabajo comunal3.jpg" alt="Logo Empresa" class="img-rounded pull-left img-responsive">
                 </div>
                 <div class="col-xs-8 text-center">
                     <div class="row">
