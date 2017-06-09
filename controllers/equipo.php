@@ -10,8 +10,10 @@ class Equipo extends Controllers {
         $this->view->render('footer');
     }
     function guardarEquipo(){
-        echo 'Guardando equipo';
-    echo 'Equipo guardado'.$_POST['txt_nombreEquipo'];
+        $datos = array();
+        $datos['txt_nombreEquipo']=$_POST['txt_nombreEquipo'];
+        $datos['txt_escudo']=$_POST['txt_escudo'];
+        $this->model->guardarEquipo($datos);
     }
     function run(){
         //llama a la funcion run() de login_model
