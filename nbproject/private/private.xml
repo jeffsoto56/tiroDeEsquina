@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/tiroDeEsquina/.htaccess</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/controllers/equipo.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/equipo/agregarEquipo.php</file>
             <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/header.php</file>
-            <file>file:/D:/xampp/htdocs/tiroDeEsquina/index.php</file>
-            <file>file:/D:/xampp/htdocs/tiroDeEsquina/config.php</file>
-            <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/index/index.php</file>
         </group>
     </open-files>
 </project-private>
