@@ -23,8 +23,61 @@ Class Equipo_model extends Models{
                 'nombre' => $datos['txt_nombreEquipo'],
                 'escudo' => $datos['txt_escudo']));
             
+    }
+    
         }
+        /* Inserta Equipo en la BD */
+    public function listaEquipos(){
+
+         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultalistaEquipos = $this->db->select("SELECT * FROM equipo ");
+        return $consultalistaEquipos;
+
+        }
+        
+          public function datosEquipo($id){
+
+         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaExistenciaEquipo = $this->db->select("SELECT * FROM equipo "
+                . "WHERE id = " . $id. " ");
+
+        if ($consultaExistenciaEquipo != null) {
+           
+            
+           return $consultaExistenciaEquipo;
+        } else {
+            
+            //Sino Inserto datos de Pre-Matricula del Estudiante
+             echo 'Error equipo no encontrado';
+           die;
+            
+    }
+    
+        }
+        public function actualizarEquipo($datos){
+
+         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaExistenciaEquipo = $this->db->select("SELECT * FROM Equipo "
+                . "WHERE id = '" . $datos['idEquipo'] . "' ");
+
+        if ($consultaExistenciaEquipo != null) {
+            $posData = array(
+                'nombre' => $datos['txt_nombreEquipo'],
+                'escudo' => $datos['txt_escudo']
+                );
+
+            $this->db->update('equipo', $posData, "`id` = '{$datos['idEquipo']}'");
+           
+        } else {
+            echo 'Error NO Existe Equipo';
+           die;
+            
+            
+    }
+    
+        }
+        
     } 
-}
+
 
 ?>
