@@ -26,6 +26,7 @@ Class Equipo_model extends Models{
     }
     
         }
+        
         /* Inserta Equipo en la BD */
     public function listaEquipos(){
 
@@ -73,10 +74,26 @@ Class Equipo_model extends Models{
            die;
             
             
+        }
+    
+    }
+        public function eliminarEquipo($id){
+
+         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaExistenciaEquipo = $this->db->select("SELECT * FROM Equipo "
+                . "WHERE id = '" . $id['id'] . "' ");
+
+        if ($consultaExistenciaEquipo != null) {
+            $this->db->delete('equipo',"`id` = '{$id['id']}'");
+           
+        } else {
+            echo 'Error NO Existe Equipo';
+           die;
+            
+            
     }
     
-        }
-        
+    }
     } 
 
 

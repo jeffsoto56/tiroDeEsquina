@@ -38,6 +38,11 @@ class Equipo extends Controllers {
         $this->model->actualizarEquipo($datos);
         header("Location: ". URL. "equipo/verEquipos");
     }
+    function eliminarEquipo($id){
+        $this->view->title = 'Mantenimiento de equipo'; 
+        $this->model->eliminarEquipo($id);
+        header("Location: ". URL. "equipo/verEquipos");
+    }
     
 }
 ?>

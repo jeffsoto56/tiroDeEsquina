@@ -5,7 +5,7 @@ _<?php
 <div class="row">
     <form id="MyForm" action="<?php echo URL; ?>equipo/guardarEquipo" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-            <legend class="text-center">DATOS DEL ESTUDIANTE</legend>
+            <legend class="text-center">DATOS DEL EQUIPO</legend>
                 <!--L2 Nombre Estudiante (Formulario Hugo)-->
                 <div class="form-group">
                     <label for="txt_nombreEquipo" class="col-xs-2 control-label">Nombre del Equipo:</label>

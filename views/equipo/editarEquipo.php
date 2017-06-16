@@ -12,7 +12,8 @@
             <div class="form-group">
                 <label for="idEquipo" class="col-xs-2 control-label">id:</label>
                 <div class="col-xs-2">
-                    <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="idEquipo" name="idEquipo" value='<?php echo $this->datosEquipo[0]['id']; ?> '/>
+                    <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="idEquipo" name="idEquipo" value='<?php echo $this->datosEquipo[0]['id']; ?> 'disabled=""/>
+                    <input type="hidden"id="idEquipo" name="idEquipo" value='<?php echo $this->datosEquipo[0]['id']; ?> '/>
                 </div>
                 <label for="txt_nombreEquipo" class="col-xs-2 control-label">Nombre:</label>
                 <div class="col-xs-2">
