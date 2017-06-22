@@ -82,10 +82,10 @@ Class Jugador_model extends Models{
 
          //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaJugador = $this->db->select("SELECT * FROM jugador "
-                . "WHERE id = '" . $id['id'] . "' ");
+                . "WHERE id = '" . $id . "' ");
 
         if ($consultaExistenciaJugador != null) {
-            $this->db->delete('jugador',"`id` = '{$id['id']}'");
+            $this->db->delete('jugador',"`id` = '{$id}'");
            
         } else {
             echo 'Error NO Existe Jugador';

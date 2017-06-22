@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/tiroDeEsquina/models/matricula_model.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/jugador/agregarJugador.php</file>
             <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/equipo/editarEquipo.php</file>
             <file>file:/D:/xampp/htdocs/tiroDeEsquina/controllers/equipo.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/controllers/login.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/equipo/agregarEquipo.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/header.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/jugador/editarJugador.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/jugador/verJugador.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/models/jugador_model.php</file>
             <file>file:/D:/xampp/htdocs/tiroDeEsquina/views/equipo/verEquipos.php</file>
+            <file>file:/D:/xampp/htdocs/tiroDeEsquina/controllers/jugador.php</file>
             <file>file:/D:/xampp/htdocs/tiroDeEsquina/models/equipo_model.php</file>
         </group>
     </open-files>
