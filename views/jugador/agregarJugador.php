@@ -23,25 +23,28 @@ _<?php
                         <option value="Portero">Portero</option>
                         <option value="Ala Izquierda">Ala Izquierda</option>
                         <option value="Ala Derecha">Ala Derecha</option>
+                        <option value="Pivot">Pivot</option>
                     </select>
                 </div>
+                
                 <label for="txt_equipo" class="col-xs-2 control-label">Equipo:</label>
                 <div class="col-xs-2">
                     <select class="form-control input-sm" name="txt_equipo" id="txt_equipo">
-                        <option value="0">Seleccione...</option>
-                         <?php
-                        foreach ($this->consultaEquipos as $value) {
+                        <option value="0">Seleccione Equipo</option>
+                        <?php
+                            foreach ($this->consultaEquipos as $value) {
                             echo "<option value='" . $value['id'] . "'>";
-                            echo $value['nombre']."</option>";
-                        }
-                            ?>
-                    </select>
+                            echo $value['nombre'] . "</option>";
+                            }
+                        ?>
+                    </select> 
+
                 </div>
-            </div> 
+            
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->
             <div class="form-group"> 
                 <div class="col-xs-12 text-center">
-                    <input type="submit" class="btn btn-primary" id="guardar" value="Guardar e Imprimir" />
+                    <input type="submit" class="btn btn-primary" id="guardar" value="Guardar" />
                 </div>
             </div>
         </fieldset>

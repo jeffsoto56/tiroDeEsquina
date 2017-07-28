@@ -6,14 +6,14 @@ class Jugador extends Controllers {
     function agregarJugador(){
         $this->view->title = 'Mantenimiento de Jugadores'; 
         $this->view->render('header');
-        $this->view->listaJugadores =  $this->model->listaJugadores();
+        $this->view->consultaEquipos =  $this->model->consultaEquipos();
         $this->view->render('jugador/agregarJugador');
         $this->view->render('footer');
     }
     function verJugador(){
         $this->view->title = 'Mantenimiento de Jugadores'; 
         $this->view->render('header');
-        $this->view->consultaEquipos =  $this->model->consultaEquipos();
+        $this->view->consultaJugadores =  $this->model->consultaJugadores();
         $this->view->render('jugador/verJugador');
         $this->view->render('footer');
     }

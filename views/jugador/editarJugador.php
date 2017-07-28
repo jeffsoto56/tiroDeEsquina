@@ -19,7 +19,7 @@
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm"  id="txt_nombreJugador" name="txt_nombreJugador" value='<?php echo $this->datosJugador[0]['nombre']; ?>'/>
                 </div>
-                <label for="txt_posicion" class="col-xs-2 control-label">Escudo:</label>
+                <label for="txt_posicion" class="col-xs-2 control-label">Posicion:</label>
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="txt_posicion" name="txt_posicion" value='<?php echo $this->datosJugador[0]['posicion']; ?>'/>
                 </div> 

@@ -94,6 +94,13 @@ Class Equipo_model extends Models{
     }
     
     }
+    public function consultaJugadores(){
+
+         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultalistaJugadores = $this->db->select("SELECT * FROM jugador ");
+        return $consultalistaJugadores;
+
+        }
     } 
 
 

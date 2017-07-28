@@ -14,10 +14,10 @@
             <th>Posicion</th>
             <th colspan="2" class="text-center">Acción</th>
         </tr>
-        <?php
+       <?php
         $con = 1;
         $mensaje = "'¿Está seguro que desea eliminar el jugador?'";
-        foreach ($this->listaJugadores as $lista => $value) {
+        foreach ($this->consultaJugadores as $lista => $value) {
             echo '<tr>';
             echo '<td>';
             echo $con;
