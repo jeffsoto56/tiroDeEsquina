@@ -37,7 +37,7 @@ class Jugador extends Controllers {
         $datos['idJugador']=$_POST['idJugador'];
         $datos['txt_nombreJugador']=$_POST['txt_nombreJugador'];
         $datos['txt_posicion']=$_POST['txt_posicion'];
-        $this->model->actualizarEquipo($datos);
+        $this->model->actualizarJugador($datos);
         header("Location: ". URL. "jugador/verJugador");
     }
     function eliminarJugador($id){

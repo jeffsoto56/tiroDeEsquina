@@ -3,8 +3,8 @@
 //die;
 ?>
 <div class="row">
-    <h1>Equipo</h1>
-    <form id="MyForm" action="<?php echo URL; ?>equipo/actualizarJugador" method="POST" enctype="multipart/form-data" class="form-horizontal">
+    <h1>Jugador</h1>
+    <form id="MyForm" action="<?php echo URL; ?>jugador/actualizarJugador" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
             <legend class="text-center">DATOS DEL JUGADOR</legend>
           
@@ -25,10 +25,11 @@
                 </div> 
             </div> 
             <br><br>
+            
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->
             <div class="form-group"> 
                 <div class="col-xs-12 text-center">
-                    <input type="submit" class="btn btn-primary" id="guardar" value="Guardar" />
+                    <input type="submit" class="btn btn-primary" id="guardar" value="Guardar" />                    
                 </div>
             </div>
         </fieldset>

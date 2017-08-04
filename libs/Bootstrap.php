@@ -82,6 +82,7 @@ class Bootstrap{
             if (!method_exists($this->_controller, $this->_url[1])) {
                 $this->_controller->{$this->_url[1]}();
                 $this->_error();
+                
             }
         }
         /*
