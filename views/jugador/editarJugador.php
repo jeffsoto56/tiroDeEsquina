@@ -20,9 +20,15 @@
                     <input type="text" class="text-uppercase form-control input-sm"  id="txt_nombreJugador" name="txt_nombreJugador" value='<?php echo $this->datosJugador[0]['nombre']; ?>'/>
                 </div>
                 <label for="txt_posicion" class="col-xs-2 control-label">Posicion:</label>
-                <div class="col-xs-2">
-                    <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="txt_posicion" name="txt_posicion" value='<?php echo $this->datosJugador[0]['posicion']; ?>'/>
-                </div> 
+                 <div class="col-xs-2">
+                    <select class="form-control input-sm" name="txt_posicion" id="txt_posicion">
+                        <option value="0">Seleccione</option>
+                        <option value="Portero">Portero</option>
+                        <option value="Ala Izquierda">Ala Izquierda</option>
+                        <option value="Ala Derecha">Ala Derecha</option>
+                        <option value="Pivot">Pivot</option>
+                    </select>
+                </div>
             </div> 
             <br><br>
             

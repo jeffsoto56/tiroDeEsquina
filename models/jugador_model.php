@@ -88,7 +88,7 @@ Class Jugador_model extends Models{
             $this->db->delete('jugador',"`id` = '{$id}'");
            
         } else {
-            echo 'Error NO Existe Jugador';
+            echo 'Error no Existe Jugador';
            die;
             
             
