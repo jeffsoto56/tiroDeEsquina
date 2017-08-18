@@ -24,6 +24,7 @@ class Jugador extends Controllers {
         $datos['txt_posicion']=$_POST['txt_posicion'];
         $this->model->guardarJugador($datos);
         header("Location: ". URL. "jugador/verJugador");
+        
     }
     function editarJugador($id){
         $this->view->title = 'Mantenimiento de Jugador'; 

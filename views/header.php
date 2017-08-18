@@ -80,6 +80,17 @@
                         </ul>
                       </li>
                     <?php }?>
+                       <?php if (Session::get('tipoUsuario') <= 3){ ?>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Calendario <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="<?php echo URL; ?>calendario/agregarCalendario">Agregar Calendario</a></li>
+                           <li><a href="<?php echo URL; ?>calendario/verCalendario">Ver Calendario</a></li>
+                          <li class="divider"></li>
+                        </ul>
+                      </li>
+                    <?php }?>
+                      
                       <?php if (Session::get('tipoUsuario') <= 3){ ?>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Matrícula <span class="caret"></span></a>
