@@ -103,6 +103,15 @@ Class Jugador_model extends Models{
         return $consultalistaEquipos;
 
         }
+    
+    
+     public function consultaPosiciones(){
+
+         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaPosiciones = $this->db->select("SELECT * FROM tipoposicion ");
+        return $consultaPosiciones;
+
+        }
     } 
 
 

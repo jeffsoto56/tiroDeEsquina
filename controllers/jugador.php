@@ -7,6 +7,7 @@ class Jugador extends Controllers {
         $this->view->title = 'Mantenimiento de Jugadores'; 
         $this->view->render('header');
         $this->view->consultaEquipos =  $this->model->consultaEquipos();
+        $this->view->consultaPosiciones =  $this->model->consultaPosiciones();
         $this->view->render('jugador/agregarJugador');
         $this->view->render('footer');
     }
@@ -14,6 +15,7 @@ class Jugador extends Controllers {
         $this->view->title = 'Mantenimiento de Jugadores'; 
         $this->view->render('header');
         $this->view->consultaJugadores =  $this->model->consultaJugadores();
+         $this->view->consultaPosiciones =  $this->model->consultaPosiciones();
         $this->view->render('jugador/verJugador');
         $this->view->render('footer');
     }
@@ -30,6 +32,7 @@ class Jugador extends Controllers {
         $this->view->title = 'Mantenimiento de Jugador'; 
         $this->view->render('header');
         $this->view->datosJugador =  $this->model->datosJugador($id);
+        $this->view->consultaPosiciones =  $this->model->consultaPosiciones();
         $this->view->render('jugador/editarJugador');
         $this->view->render('footer');
     }

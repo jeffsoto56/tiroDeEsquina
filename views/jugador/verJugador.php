@@ -14,7 +14,7 @@
             <th>Posicion</th>
             <th colspan="2" class="text-center">Acción</th>
         </tr>
-       <?php
+        <?php
         $con = 1;
         $mensaje = "'¿Está seguro que desea eliminar el jugador?'";
         foreach ($this->consultaJugadores as $lista => $value) {
@@ -29,11 +29,20 @@
             echo $value['nombre'];
             echo '</td>';
             echo '<td>';
-            echo $value['posicion'];
+            if ($value['posicion'] == 1) {
+                echo 'Portero';
+            } elseif ($value['posicion'] == 2) {
+                echo 'Ala Izquierda';
+            }elseif ($value['posicion'] == 3) {
+                echo 'Ala Derecha';
+            }elseif ($value['posicion'] == 4) {
+                echo 'Pivot';
+            }
+            
             echo '</td>';
             echo '<td class="text-center">';
             echo '<a class="btn-sm btn-primary" href="editarJugador/' . $value['id'] . '">Editar</a>&nbsp;&nbsp;&nbsp;';
-            echo '<a class="btn-sm btn-primary" href="eliminarJugador/' . $value['id'] . '"onclick = "return confirm('.$mensaje.');">Eliminar</a>';
+            echo '<a class="btn-sm btn-primary" href="eliminarJugador/' . $value['id'] . '"onclick = "return confirm(' . $mensaje . ');">Eliminar</a>';
             echo '</td>';
             echo '</tr>';
             $con++;
@@ -41,7 +50,7 @@
         ?>
         <tr>
             <td colspan='6' class="lineaFin"></td> 
-            
+
         </tr>
         <tr>
             <td colspan='6'>Última línea</td>

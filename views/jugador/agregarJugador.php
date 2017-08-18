@@ -18,12 +18,14 @@ _<?php
                 </div>
                 <label for="txt_posicion" class="col-xs-2 control-label">Posicion:</label>
                 <div class="col-xs-2">
-                    <select class="form-control input-sm" name="txt_posicion" id="txt_posicion">
-                        <option value="0">Seleccione</option>
-                        <option value="Portero">Portero</option>
-                        <option value="Ala Izquierda">Ala Izquierda</option>
-                        <option value="Ala Derecha">Ala Derecha</option>
-                        <option value="Pivot">Pivot</option>
+                    <select class="form-control input-sm validate[required]" name="txt_posicion" id="txt_posicion">
+                        <option value="">Seleccione</option>
+                        <?php
+                        foreach ($this->consultaPosiciones as $value) {
+                            echo "<option value='" . $value['id'] . "'>";
+                            echo $value['descripcion']."</option>";
+                        }
+                            ?>
                     </select>
                 </div>
                 
