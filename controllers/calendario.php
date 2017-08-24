@@ -8,7 +8,7 @@ class Calendario extends Controllers {
         $this->view->render('header');
         $this->view->consultaCalendario =  $this->model->consultaCalendario();
         $this->view->consultaCalendario =  $this->model->consultaCalendario();
-        $this->view->render('calendario/agregarcalendario');
+        $this->view->render('calendario/agregarCalendario');
         $this->view->render('footer');
     }
     function verCalendario(){

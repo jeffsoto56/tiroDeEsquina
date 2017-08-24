@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/bootstrap-Solar-337.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="<?php echo URL; ?>public/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="<?php echo URL; ?>public/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo URL; ?>public/font-awesome/css/font-awesome.min.css">
 
         <link rel="stylesheet" type="text/css" media="all" href="<?php echo URL; ?>public/css/smoothness/jquery-ui-1.8.24.custom.css">
@@ -90,7 +90,17 @@
                         </ul>
                       </li>
                     <?php }?>
-                      
+                      <?php if (Session::get('tipoUsuario') <= 3){ ?>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jornada <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="<?php echo URL; ?>jornada/agregarJornada">Agregar Jornada</a></li>
+                           <li><a href="<?php echo URL; ?>jornada/editarJornada">Editar Jornada</a></li>
+                           <li><a href="<?php echo URL; ?>jornada/verJornada">Ver Jornada</a></li>
+                          <li class="divider"></li>
+                        </ul>
+                      </li>
+                    <?php }?>
                       <?php if (Session::get('tipoUsuario') <= 3){ ?>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Matrícula <span class="caret"></span></a>
@@ -200,7 +210,7 @@
                 <div class="col-xs-8 text-center">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2>Aplicación bla bla bla</h1>
+                            <h2>Aplicación Tiro de esquina</h1>
                             <h4><p class="text-success">Colegio Técnico Profesional de Carrizal, Dirección Regional de Alajuela Circuito -01-</p></h4>
                             <h4><p class="text-succes">Telefax: 2483-0055</p></h4>
                             <!--<label id="datetime" size="50"></label>-->
