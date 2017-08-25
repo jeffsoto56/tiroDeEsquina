@@ -11,5 +11,17 @@ class Auth
             exit;
         }
     }
+    public static function nivelDeSeguridad()
+    {
+        @session_start();
+        $logged = $_SESSION['loggedIn'];
+        if ($logged == true) {
+            if($_SESSION ['tipoUsuario']>=1){
+            session_destroy();
+            header('location: ../login');
+            exit;
+            }
+        }
+    }
 }
 ?>

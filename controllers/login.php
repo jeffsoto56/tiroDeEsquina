@@ -2,6 +2,7 @@
 class Login extends Controllers {
     function __construct(){
         parent::__construct();
+
     }
     function index(){
         $this->view->title = 'Iniciar sesión'; 

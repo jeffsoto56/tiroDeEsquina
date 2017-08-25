@@ -12,7 +12,9 @@
             <th>id</th>
             <th>Nombre</th>
             <th>Posicion</th>
-            <th colspan="2" class="text-center">Acción</th>
+            <?php if (Session::get('tipoUsuario') >2) { ?>
+                <th colspan="2" class="text-center">Acción</th>
+            <?php } ?>
         </tr>
         <?php
         $con = 1;
@@ -33,19 +35,22 @@
                 echo 'Portero';
             } elseif ($value['posicion'] == 2) {
                 echo 'Ala Izquierda';
-            }elseif ($value['posicion'] == 3) {
+            } elseif ($value['posicion'] == 3) {
                 echo 'Ala Derecha';
-            }elseif ($value['posicion'] == 4) {
+            } elseif ($value['posicion'] == 4) {
                 echo 'Pivot';
             }
-            
             echo '</td>';
-            echo '<td class="text-center">';
-            echo '<a class="btn-sm btn-primary" href="editarJugador/' . $value['id'] . '">Editar</a>&nbsp;&nbsp;&nbsp;';
-            echo '<a class="btn-sm btn-primary" href="eliminarJugador/' . $value['id'] . '"onclick = "return confirm(' . $mensaje . ');">Eliminar</a>';
-            echo '</td>';
-            echo '</tr>';
             $con++;
+
+
+            if (Session::get('tipoUsuario') < 2) {
+                echo '<td class="text-center">';
+                echo '<a class="btn-sm btn-primary" href="editarJugador/' . $value['id'] . '">Editar</a>&nbsp;&nbsp;&nbsp;';
+                echo '<a class="btn-sm btn-primary" href="eliminarJugador/' . $value['id'] . '"onclick = "return confirm(' . $mensaje . ');">Eliminar</a>';
+                echo '</td>';
+            }
+            echo '</tr>';
         }
         ?>
         <tr>

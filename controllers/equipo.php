@@ -2,6 +2,8 @@
 class Equipo extends Controllers {
     function __construct(){
         parent::__construct();
+
+
     }
     function agregarEquipo(){
         $this->view->title = 'Mantenimiento de equipo'; 

@@ -63,7 +63,8 @@ Class Jornada_model extends Models {
 
         if ($consultaExistenciaJornadas != null) {
             $posData = array(
-               'equipoCasa' => $datos['txt_equipoCasa'],
+                
+                'equipoCasa' => $datos['txt_equipoCasa'],
                 'equipoVisita' => $datos['txt_equipoVisita'],
                 'fechaJornada' => $datos['txt_fechaJornada']
             );
@@ -93,6 +94,13 @@ Class Jornada_model extends Models {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultalistaJornadas = $this->db->select("SELECT * FROM jornada ");
+        return $consultalistaJornadas;
+    }
+    
+    public function consultaCalendario() {
+
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultalistaJornadas = $this->db->select("SELECT * FROM calendario ");
         return $consultalistaJornadas;
     }
 

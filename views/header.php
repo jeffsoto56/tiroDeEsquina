@@ -63,9 +63,11 @@
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Equipo <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
+                            <?php if (Session::get('tipoUsuario') <= 1){ ?>
                           <li><a href="<?php echo URL; ?>equipo/agregarEquipo">Agregar Equipo</a></li>
+                           <?php }?>
                              <li><a href="<?php echo URL; ?>equipo/verEquipos">Ver Equipo</a></li>
-                          <?php if (Session::get('tipoUsuario') < 2){ ?>
+                          <?php if (Session::get('tipoUsuario') < 1){ ?>
                           <li><a href="<?php echo URL; ?>actualizarestudiantes/cargarSeccionesEstudiantes">Cargar Secciones Estudiantes</a></li>
                           <?php }  ?>
                         </ul>
@@ -74,7 +76,9 @@
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jugadores <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
+                            <?php if (Session::get('tipoUsuario') <= 1){ ?>
                           <li><a href="<?php echo URL; ?>jugador/agregarJugador">Agregar Jugador</a></li>
+                           <?php }?>
                            <li><a href="<?php echo URL; ?>jugador/verJugador">Ver Jugador</a></li>
                           <li class="divider"></li>
                         </ul>
@@ -84,7 +88,9 @@
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Calendario <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
+                             <?php if (Session::get('tipoUsuario') <= 1){ ?>
                           <li><a href="<?php echo URL; ?>calendario/agregarCalendario">Agregar Calendario</a></li>
+                           <?php }?>
                            <li><a href="<?php echo URL; ?>calendario/verCalendario">Ver Calendario</a></li>
                           <li class="divider"></li>
                         </ul>
@@ -92,10 +98,13 @@
                     <?php }?>
                       <?php if (Session::get('tipoUsuario') <= 3){ ?>
                       <li class="dropdown">
+                          
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jornada <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
+                             <?php if (Session::get('tipoUsuario') <= 1){ ?>
                           <li><a href="<?php echo URL; ?>jornada/agregarJornada">Agregar Jornada</a></li>
                            <li><a href="<?php echo URL; ?>jornada/editarJornada">Editar Jornada</a></li>
+                           <?php }?>
                            <li><a href="<?php echo URL; ?>jornada/verJornada">Ver Jornada</a></li>
                           <li class="divider"></li>
                         </ul>

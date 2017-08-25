@@ -12,7 +12,9 @@
             <th>id</th>
             <th>Nombre</th>
             <th>Escudo</th>
+              <?php if (Session::get('tipoUsuario') >2) { ?>
             <th colspan="2" class="text-center">Acción</th>
+             <?php } ?>
         </tr>
         <?php
         $con = 1;
@@ -31,12 +33,17 @@
             echo '<td>';
             echo $value['escudo'];
             echo '</td>';
+            
+            echo '</td>';
+            $con++;
+            
+            if (Session::get('tipoUsuario') <2) {
             echo '<td class="text-center">';
             echo '<a class="btn-sm btn-primary" href="editarEquipo/' . $value['id'] . '">Editar</a>&nbsp;&nbsp;&nbsp;';
             echo '<a class="btn-sm btn-primary" href="eliminarEquipo/' . $value['id'] . '"onclick = "return confirm('.$mensaje.');">Eliminar</a>';
-            echo '</td>';
+            }
             echo '</tr>';
-            $con++;
+            
         }
         ?>
         <tr>

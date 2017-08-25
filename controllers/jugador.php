@@ -2,6 +2,9 @@
 class Jugador extends Controllers {
     function __construct(){
         parent::__construct();
+        Auth::handleLogin();
+
+
     }
     function agregarJugador(){
         $this->view->title = 'Mantenimiento de Jugadores'; 
