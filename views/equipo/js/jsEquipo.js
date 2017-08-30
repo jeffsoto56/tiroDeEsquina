@@ -1,11 +1,6 @@
 
 $(function ()
 {
-    //Fecha Nacimiento//
-    $("#txt_fechaJornada").datepicker({dateFormat: 'yy-mm-dd',
-        changeMonth: true,
-        changeYear: true
-    });
     $("#buscarEstudianteRatificar").click(function (event) {
         var idD = $("#tf_cedulaEstudiante").val();
         $.getJSON('buscarEstuRatif/' + idD, function (resulBusqueda) {
@@ -18,7 +13,7 @@ $(function ()
                         '<td>' + resulBusqueda[0].id + '</td>' +
                         '<td>' + resulBusqueda[0].nombre + '</td>' +
                         '<td>' + resulBusqueda[0].escudo + '</td>' +
-                        '<td><a class="btn-sm btn-primary" href="ratificarEstudiante/' + id + '">Boom!!!</a></td>' +
+                        '<td><a class="btn-sm btn-primary" href="ratificarEstudiante/' + resulBusqueda[0].id + '">Boom!!!</a></td>' +
                         '</tr>');
             }
         });

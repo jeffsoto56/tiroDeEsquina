@@ -101,6 +101,14 @@ Class Equipo_model extends Models{
         return $consultalistaJugadores;
 
         }
+        public function buscarEstuRatif($ced_estudiante) {
+        $resultado = $this->db->select("SELECT * "
+                . "FROM equipo "
+                . "WHERE nombre = '" . $ced_estudiante . "'");
+
+        echo json_encode($resultado);
+    }
+
     } 
 
 

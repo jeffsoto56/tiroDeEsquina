@@ -12,7 +12,7 @@ _<?php
                 <label for="txt_nombreCalendario" class="col-xs-2 control-label">Calendario:</label>
                 <div class="col-xs-2">
                     <select class="form-control input-sm" name="txt_nombreCalendario" id="txt_nombreCalendario">
-                           <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="txt_nombreCalendario" name="txt_nombreCalendario"/>
+                          
                         <option value="0">Seleccione calendario</option>
                         <?php
                         foreach ($this->consultaCalendario as $value) {

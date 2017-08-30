@@ -2,8 +2,17 @@
 //print_r($this->estadoMatricula);
 //die;
 ?>
-<center>
-    <table class="table table-condensed">
+<center>    
+    <div class="col-xs-3">
+    Búscar equipo:
+    </div>
+    <div class="col-xs-2">
+        <input type="text" class="input-sm validate[required]" name="tf_cedulaEstudiante" id="tf_cedulaEstudiante" />
+    </div>
+    <div class="col-xs-2">
+        <input type="button" class="btn-sm btn-success" id="buscarEstudianteRatificar" value="Buscar" />
+    </div>
+    <table class="table table-condensed" id="tablaRatificar" >
         <tr>
             <th colspan="6" class="nombreTabla text-center">Lista de Equipos</th>
         </tr>

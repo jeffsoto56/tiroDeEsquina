@@ -3,6 +3,7 @@ class Jugador extends Controllers {
     function __construct(){
         parent::__construct();
         Auth::handleLogin();
+        $this->view->js = array('jugador/js/jsJugador.js');
 
 
     }
@@ -51,6 +52,9 @@ class Jugador extends Controllers {
         $this->view->title = 'Mantenimiento de Jugador'; 
         $this->model->eliminarJugador($id);
         header("Location: ". URL. "jugador/verJugador");
+    }
+    function buscarEstuRatif($ced_estudiante) {
+        $this->model->buscarEstuRatif($ced_estudiante);
     }
     
 }

@@ -20,10 +20,12 @@ class Jornada extends Controllers {
     }
 
     function verJornada() {
+        $this->view->listaJornadas = $this->model->listaJornadas();
+        $this->view->consultaEquipos = $this->model->consultaEquipos();
+        $this->view->listaCalendario =  $this->model->listaCalendario();
         $this->view->title = 'Mantenimiento de jornada';
         $this->view->render('header');
-        $this->view->listaJornadas = $this->model->listaJornadas();
-        $this->view->render('jordana/verJornada');
+        $this->view->render('jornada/verJornada');
         $this->view->render('footer');
     }
 
@@ -32,9 +34,9 @@ class Jornada extends Controllers {
         $datos['txt_nombreCalendario'] = $_POST['txt_nombreCalendario'];
         $datos['txt_equipoCasa'] = $_POST['txt_equipoCasa'];
         $datos['txt_equipoVisita'] = $_POST['txt_equipoVisita'];
-        $datos['txt_fecha'] = $_POST['txt_fecha'];
+        $datos['txt_fechaJornada'] = $_POST['txt_fechaJornada'];
         $this->model->guardarJornada($datos);
-        header("Location: " . URL . "equipo/verJornada");
+        header("Location: " . URL . "jornada/verJornada");
     }
 
     function editarJornada($id) {

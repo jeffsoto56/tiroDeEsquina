@@ -24,7 +24,8 @@ Class Jornada_model extends Models {
             $this->db->insert('jornada', array(
                 'equipoCasa' => $datos['txt_equipoCasa'],
                 'equipoVisita' => $datos['txt_equipoVisita'],
-                'fechaJornada' => $datos['txt_fechaJornada']));
+                'fecha' => $datos['txt_fechaJornada'],
+                'idCalendario' => $datos['txt_nombreCalendario']));
         }
     }
 
@@ -37,7 +38,7 @@ Class Jornada_model extends Models {
         return $consultalistaJornadas;
     }
 
-    public function datosJornada($id) {
+    public function datosJornadas($id) {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaJornadas = $this->db->select("SELECT * FROM jornada "
@@ -79,11 +80,11 @@ Class Jornada_model extends Models {
     public function eliminarJornada($id) {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaJornadas = $this->db->select("SELECT * FROM jornado "
-                . "WHERE id = '" . $id['id'] . "' ");
+        $consultaExistenciaJornadas = $this->db->select("SELECT * FROM jornada "
+                . "WHERE id = '" . $id. "' ");
 
         if ($consultaExistenciaJornadas != null) {
-            $this->db->delete('jornada', "`id` = '{$id['id']}'");
+            $this->db->delete('jornada', "`id` = '{$id}'");
         } else {
             echo 'Error NO Existe jornada';
             die;
@@ -98,6 +99,13 @@ Class Jornada_model extends Models {
     }
     
     public function consultaCalendario() {
+
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultalistaJornadas = $this->db->select("SELECT * FROM calendario ");
+        return $consultalistaJornadas;
+    }
+    
+    public function listaCalendario() {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultalistaJornadas = $this->db->select("SELECT * FROM calendario ");

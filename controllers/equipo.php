@@ -2,6 +2,7 @@
 class Equipo extends Controllers {
     function __construct(){
         parent::__construct();
+        $this->view->js = array('equipo/js/jsEquipo.js');
 
 
     }
@@ -45,6 +46,9 @@ class Equipo extends Controllers {
         $this->model->eliminarEquipo($id);
         header("Location: ". URL. "equipo/verEquipos");
     }
-    
+    function buscarEstuRatif($ced_estudiante) {
+        $this->model->buscarEstuRatif($ced_estudiante);
+    }
+
 }
 ?>
