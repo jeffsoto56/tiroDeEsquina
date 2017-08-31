@@ -1,4 +1,4 @@
-<?php
+c<?php
 
 Class Calendario_model extends Models {
 
@@ -101,6 +101,19 @@ Class Calendario_model extends Models {
         return $consultalistaEquipos;
     }
 
+     public function buscarEstuRatif($ced_estudiante) {
+        $resultado = $this->db->select("SELECT * "
+                . "FROM jornada "
+                . "WHERE nombre LIKE '%" . $ced_estudiante . "%'");
+        echo json_encode($resultado);
+    }
+      public function buscarJornadas($idCalendario) {
+        $resultado = $this->db->select("SELECT * "
+                . "FROM jornada "
+                . "WHERE idCalendario = " . $idCalendario . "");
+        echo json_encode($resultado);
+    }
+    
   
 
 }

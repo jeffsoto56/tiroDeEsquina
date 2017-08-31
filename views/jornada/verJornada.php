@@ -13,7 +13,9 @@
             <th>Equipo casa</th>
             <th>Equipo visita</th>
             <th>Fecha jornada</th>
-            <th colspan="2" class="text-center">Acción</th>
+            <?php if (Session::get('tipoUsuario') >2) { ?>
+                <th colspan="2" class="text-center">Acción</th>
+            <?php } ?>
         </tr>
         <?php
         $con = 1;
@@ -47,12 +49,16 @@
             echo '<td>';
             echo $value['fecha'];
             echo '</td>';
+            $con++;
+            
+            if (Session::get('tipoUsuario') < 2) {
             echo '<td class="text-center">';
             echo '<a class="btn-sm btn-primary" href="editarJornada/' . $value['id'] . '">Editar</a>&nbsp;&nbsp;&nbsp;';
             echo '<a class="btn-sm btn-primary" href="eliminarJornada/' . $value['id'] . '"onclick = "return confirm(' . $mensaje . ');">Eliminar</a>';
             echo '</td>';
+            }
             echo '</tr>';
-            $con++;
+            
         }
         ?>
         <tr>

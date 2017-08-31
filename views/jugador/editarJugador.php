@@ -34,10 +34,7 @@
                             echo $value['descripcion'] . "</option>";
                         }
                         ?>
-                        <option value="Portero">Portero</option>
-                        <option value="Ala Izquierda">Ala Izquierda</option>
-                        <option value="Ala Derecha">Ala Derecha</option>
-                        <option value="Pivot">Pivot</option>
+                   
                     </select>
                 </div>
                  

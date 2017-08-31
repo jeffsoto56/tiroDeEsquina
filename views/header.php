@@ -92,6 +92,7 @@
                           <li><a href="<?php echo URL; ?>calendario/agregarCalendario">Agregar Calendario</a></li>
                            <?php }?>
                            <li><a href="<?php echo URL; ?>calendario/verCalendario">Ver Calendario</a></li>
+                           <li><a href="<?php echo URL; ?>calendario/verCampeonato">Ver Campeonato</a></li>
                           <li class="divider"></li>
                         </ul>
                       </li>
@@ -103,7 +104,7 @@
                         <ul class="dropdown-menu" role="menu">
                              <?php if (Session::get('tipoUsuario') <= 1){ ?>
                           <li><a href="<?php echo URL; ?>jornada/agregarJornada">Agregar Jornada</a></li>
-                           <li><a href="<?php echo URL; ?>jornada/editarJornada">Editar Jornada</a></li>
+                           
                            <?php }?>
                            <li><a href="<?php echo URL; ?>jornada/verJornada">Ver Jornada</a></li>
                           <li class="divider"></li>

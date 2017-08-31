@@ -2,6 +2,7 @@
 class Calendario extends Controllers {
     function __construct(){
         parent::__construct();
+        $this->view->js = array('calendario/js/jsCalendario.js');
 
     }
     function agregarCalendario(){
@@ -44,6 +45,21 @@ class Calendario extends Controllers {
         $this->model->eliminarCalendario($id);
         header("Location: ". URL. "calendario/verCalendario");
     }
+    
+      function verCampeonato(){
+        $this->view->title = 'Mantenimiento de Calendario'; 
+        $this->view->render('header');
+        $this->view->consultaCalendario = $this->model->consultaCalendario();
+        $this->view->render('calendario/verCampeonato');
+        $this->view->render('footer');
+    }
+        function buscarEstuRatif($ced_estudiante) {
+        $this->model->buscarEstuRatif($ced_estudiante);
+    }
+       function buscarJornadas($idCalendario) {
+        $this->model->buscarJornadas($idCalendario);
+    }
+
     
 }
 ?>

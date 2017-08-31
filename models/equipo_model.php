@@ -9,7 +9,7 @@ Class Equipo_model extends Models{
     public function guardarEquipo($datos){
 
          //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaEquipo = $this->db->select("SELECT * FROM Equipo "
+        $consultaExistenciaEquipo = $this->db->select("SELECT * FROM equipo "
                 . "WHERE nombre = '" . $datos['txt_nombreEquipo'] . "' ");
 
         if ($consultaExistenciaEquipo != null) {

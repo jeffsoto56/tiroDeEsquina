@@ -9,24 +9,12 @@ Class Jornada_model extends Models {
     /* Inserta Equipo en la BD */
 
     public function guardarJornada($datos) {
-
-        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaJornadas = $this->db->select("SELECT * FROM jornada "
-                . "WHERE nombre = '" . $datos['txt_equipoCasa'] . $datos['txt_equipoVisita'] . "' ");
-
-        if ($consultaExistenciaJornadas != null) {
-
-            echo 'Error Ya Existe esta jornada';
-            die;
-        } else {
-
-            //Sino Inserto datos de Pre-Matricula del Estudiante
-            $this->db->insert('jornada', array(
-                'equipoCasa' => $datos['txt_equipoCasa'],
-                'equipoVisita' => $datos['txt_equipoVisita'],
-                'fecha' => $datos['txt_fechaJornada'],
-                'idCalendario' => $datos['txt_nombreCalendario']));
-        }
+        //Sino Inserto datos de Pre-Matricula del Estudiante
+        $this->db->insert('jornada', array(
+            'equipoCasa' => $datos['txt_equipoCasa'],
+            'equipoVisita' => $datos['txt_equipoVisita'],
+            'fecha' => $datos['txt_fechaJornada'],
+            'idCalendario' => $datos['txt_nombreCalendario']));
     }
 
     /* Inserta Equipo en la BD */
@@ -60,15 +48,14 @@ Class Jornada_model extends Models {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaJornadas = $this->db->select("SELECT * FROM jornada "
-                . "WHERE id = '" . $datos['idEquipo'] . "' ");
+                . "WHERE id = " . $datos['idJornada'] . " ");
 
         if ($consultaExistenciaJornadas != null) {
             $posData = array(
-                
                 'equipoCasa' => $datos['txt_equipoCasa'],
                 'equipoVisita' => $datos['txt_equipoVisita'],
-                'fechaJornada' => $datos['txt_fechaJornada']
-            );
+               'fecha' => $datos['txt_fechaJornada'],
+                'idCalendario' => $datos['txt_nombreCalendario']);
 
             $this->db->update('jornada', $posData, "`id` = '{$datos['idJornada']}'");
         } else {
@@ -81,7 +68,7 @@ Class Jornada_model extends Models {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaJornadas = $this->db->select("SELECT * FROM jornada "
-                . "WHERE id = '" . $id. "' ");
+                . "WHERE id = '" . $id . "' ");
 
         if ($consultaExistenciaJornadas != null) {
             $this->db->delete('jornada', "`id` = '{$id}'");
@@ -97,14 +84,14 @@ Class Jornada_model extends Models {
         $consultalistaJornadas = $this->db->select("SELECT * FROM jornada ");
         return $consultalistaJornadas;
     }
-    
+
     public function consultaCalendario() {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultalistaJornadas = $this->db->select("SELECT * FROM calendario ");
         return $consultalistaJornadas;
     }
-    
+
     public function listaCalendario() {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula

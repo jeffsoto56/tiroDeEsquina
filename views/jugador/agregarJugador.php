@@ -29,10 +29,13 @@ _<?php
                     </select>
                 </div>
                 
+                
+                    
+                
                 <label for="txt_equipo" class="col-xs-2 control-label">Equipo:</label>
                 <div class="col-xs-2">
-                    <select class="form-control input-sm" name="txt_equipo" id="txt_equipo">
-                        <option value="0">Seleccione Equipo</option>
+                    <select class="form-control input-sm validate[required]" name="txt_equipo" id="txt_equipo">
+                        <option value="">Seleccione Equipo</option>
                         <?php
                             foreach ($this->consultaEquipos as $value) {
                             echo "<option value='" . $value['id'] . "'>";
@@ -40,8 +43,9 @@ _<?php
                             }
                         ?>
                     </select> 
-
                 </div>
+                
+                
             
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->
             <div class="form-group"> 
