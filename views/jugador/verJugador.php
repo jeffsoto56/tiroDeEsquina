@@ -2,6 +2,10 @@
 //print_r($this->estadoMatricula);
 //die;
 ?>
+<script type='text/javascript'>
+  var userName = "<?php echo Session::get('tipoUsuario') ?>";
+</script>
+
 <center>
     <div class="col-xs-3">
     Búscar jugador:
@@ -21,6 +25,7 @@
             <th>id</th>
             <th>Nombre</th>
             <th>Posicion</th>
+            <th>Equipo</th>
             <?php if (Session::get('tipoUsuario') >2) { ?>
                 <th colspan="2" class="text-center">Acción</th>
             <?php } ?>
@@ -48,7 +53,17 @@
                 echo 'Ala Derecha';
             } elseif ($value['posicion'] == 4) {
                 echo 'Pivot';
+            }elseif ($value['posicion'] == 5) {
+                echo 'Cierre';
             }
+            echo '</td>';
+            echo '<td>';
+            foreach ($this->consultaEquipos as $equipo) {
+                if ($equipo['id'] == $value['equipo']) {
+                    echo $equipo['nombre'];
+                }
+            }
+            
             echo '</td>';
             $con++;
 

@@ -24,7 +24,8 @@ Class Jugador_model extends Models {
             $this->db->insert('Jugador', array(
                 'id' => $datos['txt_idJugador'],
                 'nombre' => $datos['txt_nombreJugador'],
-                'Posicion' => $datos['txt_posicion']));
+                'Posicion' => $datos['txt_posicion'],
+                'equipo' => $datos['txt_equipo']));
         }
     }
 
@@ -41,7 +42,7 @@ Class Jugador_model extends Models {
 
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaJugador = $this->db->select("SELECT * FROM jugador "
-                . "WHERE id = " . $id . " ");
+                . "WHERE id = '" . $id . "' ");
 
         if ($consultaExistenciaJugador != null) {
 
@@ -102,12 +103,41 @@ Class Jugador_model extends Models {
         return $consultaPosiciones;
     }
 
+
     public function buscarEstuRatif($ced_estudiante) {
         $resultado = $this->db->select("SELECT * "
                 . "FROM jugador "
                 . "WHERE nombre LIKE '%" . $ced_estudiante . "%'");
         echo json_encode($resultado);
     }
+    public function consultaNiveles() {
+        return $this->db->select("SELECT DISTINCT nivel "
+                        . "FROM sipce_grupos "
+                        . "WHERE annio = " . 2017 . " "
+                        . "ORDER BY nivel");
+    }
+public function cargaGrupos($idNivel) {
+        $resultado = $this->db->select("SELECT DISTINCT grupo FROM sipce_grupos "
+                . "WHERE nivel = :nivel "
+                . "AND annio = " . 2017 . " "
+                . "AND grupo <> 0 "
+                . "ORDER BY grupo", array('nivel' => $idNivel));
+        echo json_encode($resultado);
+    }
+
+    public function cargaSeccion($consulta) {
+        $resultado2 = $this->db->select("SELECT e.cedula,e.nombre,e.apellido1,e.apellido2,g.sub_grupo,r.condicion "
+                . "FROM sipce_estudiante as e, sipce_grupos as g, sipce_matricularatificacion as r "
+                . "WHERE e.cedula = g.ced_estudiante "
+                . "AND e.cedula = r.ced_estudiante "
+                . "AND g.nivel = " . $consulta['nivelSeleccionado'] . " "
+                . "AND g.grupo = " . $consulta['grupoSeleccionado'] . " "
+                . "AND g.annio = " . 2017 . " "
+                . "AND r.anio = " . 2017 . " "
+                . "ORDER BY g.sub_grupo,e.apellido1,e.apellido2,e.nombre");
+        echo json_encode($resultado2);
+    }
+
 
 }
 

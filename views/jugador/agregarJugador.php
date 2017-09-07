@@ -1,7 +1,39 @@
-_<?php
+<?php
 //print_r($this->especialidadEstudiante);
 //die;
 ?>
+<?php
+//print_r($this->especialidadEstudiante);
+//die;
+?>
+<div class="row">
+    <div class="form-group">
+        <label for="tf_Niveles" class="col-xs-2 control-label">Nivel:</label>
+        <div class="col-xs-2">
+            <select class="form-control input-sm" name="tf_Niveles" id="tf_Niveles">
+                <option value="">Seleccione</option>
+                <?php
+                foreach ($this->consultaNiveles as $value) {
+                    ?>
+                    <option value="<?php echo $value['nivel']; ?>"><?php echo $value['nivel']; ?></option>
+                    <?php
+                }
+                ?>  
+            </select>
+        </div>
+        <label for="tf_Grupos" class="col-xs-2 control-label">Grupo:</label>
+        <div class="col-xs-2">
+            <select class="form-control input-sm" name="tf_Grupos" id="tf_Grupos">
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 col-xs-12">
+        <table class="table table-condensed" id="listaEstudiantes"></table>
+    </div>
+</div>
+
 <div class="row">
     <form id="MyForm" action="<?php echo URL; ?>jugador/guardarJugador" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
