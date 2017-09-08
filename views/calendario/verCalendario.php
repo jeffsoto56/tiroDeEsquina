@@ -3,21 +3,6 @@
 //die;
 ?>
 <center>
-    <label for="txt_nombreCalendario" class="col-xs-2 control-label">Buscar Calendario:</label>
-    <div class="col-xs-2">
-        <select class="form-control input-sm validate[required]" name="tf_cedulaEstudiante" id="tf_cedulaEstudiante">
-
-            <option value="">Seleccione calendario:</option>
-            <?php
-            foreach ($this->consultaCalendario as $value) {
-                echo "<option value='" . $value['id'] . "' ";
-                if ($value['id'] == $this->datosCalendario[0]['idCalendario'])
-                    echo "selected";
-                ?> > <?php
-                echo $value['nombreCalendario'] . "</option>";
-            }
-            ?>
-        </select> 
 
     </div>
     <table class="table table-condensed" id="tablaRatificar" >

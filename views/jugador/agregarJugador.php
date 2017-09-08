@@ -40,15 +40,15 @@
             <legend class="text-center">DATOS DEL JUGADOR</legend>
             <!--L2 Nombre Estudiante (Formulario Hugo)-->
             <div class="form-group">
-                <label for="txt_idJugador" class="col-xs-2 control-label">Cedula:</label>
+                <label for="txt_idJugador" class="col-xs-1 control-label">Cedula:</label>
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="txt_idJugador" name="txt_idJugador"/>
                 </div>
-                <label for="txt_nombreJugador" class="col-xs-2 control-label">Nombre del Jugador:</label>
+                <label for="txt_nombreJugador" class="col-xs-1 control-label">Nombre:</label>
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="txt_nombreJugador" name="txt_nombreJugador"/>
                 </div>
-                <label for="txt_posicion" class="col-xs-2 control-label">Posicion:</label>
+                <label for="txt_posicion" class="col-xs-1 control-label">Posicion:</label>
                 <div class="col-xs-2">
                     <select class="form-control input-sm validate[required]" name="txt_posicion" id="txt_posicion">
                         <option value="">Seleccione</option>
@@ -64,7 +64,7 @@
                 
                     
                 
-                <label for="txt_equipo" class="col-xs-2 control-label">Equipo:</label>
+                <label for="txt_equipo" class="col-xs-1 control-label">Equipo:</label>
                 <div class="col-xs-2">
                     <select class="form-control input-sm validate[required]" name="txt_equipo" id="txt_equipo">
                         <option value="">Seleccione Equipo</option>

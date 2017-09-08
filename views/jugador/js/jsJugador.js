@@ -10,7 +10,7 @@ $(function ()
                 alert("Jugador no encontrado(a), verifique la información ingresada");
             } else {
                 $("#tablaRatificar").empty();
-                $('#tablaRatificar').append('<tr><th colspan="6" class="nombreTabla text-center">LISTA DE JUGADORES</th></tr><tr><th>N°</th><th>Id</th><th>Nombre</th><th>Posicion</th><th>Equipo</th><th>Acción</th></tr>');
+                var arraySalida= '<tr><th colspan="6" class="nombreTabla text-center">LISTA DE JUGADORES</th></tr><tr><th>N°</th><th>Id</th><th>Nombre</th><th>Posicion</th><th>Equipo</th><th>Acción</th></tr>';
                 for (var i = 0; i < resulBusqueda.length; i++) {
                     if (resulBusqueda[i].posicion == 1) {
                         nombrePosicion = "portero";
@@ -24,17 +24,23 @@ $(function ()
                     else if (resulBusqueda[i].posicion == 4) {
                         nombrePosicion = "Pivot";
                     }
+                    else if (resulBusqueda[i].posicion == 5) {
+                        nombrePosicion = "Cierre";
+                    }
 
-                    $('#tablaRatificar').append('<tr><td>1</td>' +
+                    arraySalida+='<tr><td>1</td>' +
                             '<td>' + resulBusqueda[i].id + '</td>' +
-                            '<td>' + resulBusqueda[i].nombre + '</td>' +
+                            '<td>' + resulBusqueda[i].nombreJugador + '</td>' +
                             '<td>' + nombrePosicion + '</td>' +
-                            '<td>' + resulBusqueda[i].equipo + '</td>' +
-                           
-                            '<td><a class="btn-sm btn-warning" href="editarJugador/' + resulBusqueda[i].id + '">Editar</a> ' +
-                            '<a class="btn-sm btn-danger" href="eliminarJugador/' + resulBusqueda[i].id + '">Eliminar</a></td>' +
-                            '</tr>');
-                             
+                            '<td>' + resulBusqueda[i].nombre + '</td>';
+                    if (userName < 2) {
+                        arraySalida+='<td><a class="btn-sm btn-warning" href="editarJugador/' + resulBusqueda[i].id + '">Editar</a> ' +
+                                '<a class="btn-sm btn-danger" href="eliminarJugador/' + resulBusqueda[i].id + '">Eliminar</a></td>' +
+                                '</tr>';
+                    } else {
+                        arraySalida+='<td>-</td></tr>';
+                    }
+                    $("#tablaRatificar").append(arraySalida);
                 }
             }
         });
@@ -52,7 +58,6 @@ $(function ()
     });
 
     $("#tf_Grupos").change(function () {
-
         //Activo la Animación para carga de datos
         $("#listaEstudiantes").empty();
         var banderaGrupoB = 0;
@@ -78,18 +83,13 @@ $(function ()
                         seccionElegida[linea].cedula + '</td><td>' + seccionElegida[linea].apellido1 + ' ' +
                         seccionElegida[linea].apellido2 + ' ' + seccionElegida[linea].nombre + '</td><td>' +
                         seccionElegida[linea].condicion + '</td>';
-                arraySalida += '<td><a class="btn-sm btn-primary"  onclick="copiarTexto(' + comilla + seccionElegida[linea].cedula + comilla +  ')"> Agregar</a></td></tr>';
+                arraySalida += '<td><a class="btn-sm btn-primary"  onclick="copiarTexto(' + comilla + seccionElegida[linea].cedula + comilla + ')"> Agregar</a></td></tr>';
 
             }
             arraySalida += '<tr><td colspan="5" class="text-center">Ultima Línea</td></tr></tbody>';
             $('#listaEstudiantes').append(arraySalida);
         }, "json");
     });
-    if (userName < 3) {
-                    arraySalida += '<td><a class="btn-sm btn-primary" href="modificarSeccion/' + seccionElegida[linea].cedula + '">Modificar Sección</a></td></tr>';
-                } else {
-                    arraySalida += '<td>-</td></tr>';
-                }
 });
 function copiarTexto($id_busqueda) {
     var datosJugador = document.getElementById($id_busqueda);

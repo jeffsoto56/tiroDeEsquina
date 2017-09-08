@@ -105,9 +105,10 @@ Class Jugador_model extends Models {
 
 
     public function buscarEstuRatif($ced_estudiante) {
-        $resultado = $this->db->select("SELECT * "
-                . "FROM jugador "
-                . "WHERE nombre LIKE '%" . $ced_estudiante . "%'");
+        $resultado = $this->db->select("SELECT j.id,j.nombre as nombreJugador,j.posicion,j.equipo,e.nombre "
+                . "FROM jugador as j, equipo as e "
+                . "WHERE j.nombre LIKE '%" . $ced_estudiante . "%' "
+                . "AND j.equipo = e.id ");
         echo json_encode($resultado);
     }
     public function consultaNiveles() {

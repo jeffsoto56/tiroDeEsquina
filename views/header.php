@@ -80,8 +80,6 @@
                           <li><a href="<?php echo URL; ?>jugador/agregarJugador">Agregar Jugador</a></li>
                            <?php }?>
                            <li><a href="<?php echo URL; ?>jugador/verJugador">Ver Jugador</a></li>
-                            
-                          <li class="divider"></li>
                         </ul>
                       </li>
                     <?php }?>

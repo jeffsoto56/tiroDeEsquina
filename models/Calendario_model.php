@@ -1,4 +1,4 @@
-c<?php
+<?php
 
 Class Calendario_model extends Models {
 
@@ -108,9 +108,11 @@ Class Calendario_model extends Models {
         echo json_encode($resultado);
     }
       public function buscarJornadas($idCalendario) {
-        $resultado = $this->db->select("SELECT * "
-                . "FROM jornada "
-                . "WHERE idCalendario = " . $idCalendario . "");
+        $resultado = $this->db->select("SELECT j.equipoVisita,j.equipoCasa,j.fecha,j.id,j.idCalendario ,e.nombre as nombreEquipoCasa,ee.nombre as nombreEquipoVisita "
+                . "FROM jornada as j, equipo as e, equipo as ee "
+                . "WHERE j.idCalendario = " . $idCalendario . " "
+                . "AND j.equipoCasa = e.id "
+                . "AND j.equipoVisita = ee.id ");
         echo json_encode($resultado);
     }
     

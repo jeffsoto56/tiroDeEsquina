@@ -7,13 +7,13 @@
 </script>
 
 <center>
-    <div class="col-xs-3">
+    <div class="col-xs-2">
     Búscar jugador:
     </div>
     <div class="col-xs-2">
         <input type="text" class="input-sm validate[required]" name="tf_cedulaEstudiante" id="tf_cedulaEstudiante" />
     </div>
-    <div class="col-xs-2">
+    <div class="col-xs-1">
         <input type="button" class="btn-sm btn-success" id="buscarEstudianteRatificar" value="Buscar" />
     </div>
     <table class="table table-condensed"id="tablaRatificar">
@@ -27,7 +27,7 @@
             <th>Posicion</th>
             <th>Equipo</th>
             <?php if (Session::get('tipoUsuario') >2) { ?>
-                <th colspan="2" class="text-center">Acción</th>
+                <th colspan="1" class="text-center">Acción</th>
             <?php } ?>
         </tr>
         <?php

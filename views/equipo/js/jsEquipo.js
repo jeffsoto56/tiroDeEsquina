@@ -13,8 +13,16 @@ $(function ()
                         '<td>' + resulBusqueda[0].id + '</td>' +
                         '<td>' + resulBusqueda[0].nombre + '</td>' +
                         '<td>' + resulBusqueda[0].escudo + '</td>' +
-                        '<td><a class="btn-sm btn-primary" href="ratificarEstudiante/' + resulBusqueda[0].id + '">Boom!!!</a></td>' +
-                        '</tr>');
+                        '<td>' + resulBusqueda[0].accion + '</td>' +'</td>'); 
+                        
+                        
+                  if (userName < 2) {
+                        $('#tablaRatificar').append('<td><a class="btn-sm btn-warning" href="editarEquipo/' + resulBusqueda[i].id + '">Editar</a> ' +
+                                '<a class="btn-sm btn-danger" href="eliminarEquipo/' + resulBusqueda[i].id + '">Eliminar</a></td>' +
+                                '</tr>');
+                    } else {
+                        $('#tablaRatificar').append('<td>-</td></tr>');
+                    }
             }
         });
     });

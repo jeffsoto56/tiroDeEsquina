@@ -2,6 +2,9 @@
 //print_r($this->estadoMatricula);
 //die;
 ?>
+<script type='text/javascript'>
+  var userName = "<?php echo Session::get('tipoUsuario') ?>";
+</script>
 <center>    
     <div class="col-xs-3">
     Búscar equipo:
