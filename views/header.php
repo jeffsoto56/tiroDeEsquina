@@ -181,6 +181,18 @@
                         </ul>
                       </li>
                     <?php }?>
+                      <?php if (Session::get('tipoUsuario') <= 3){ ?>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Grupos<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <?php if (Session::get('tipoUsuario') <= 1){ ?>
+                          <li><a href="<?php echo URL; ?>grupo/agregarGrupo">Agregar Grupo</a></li>
+                          <li><a href="<?php echo URL; ?>grupo/formarGrupo">Formar Grupo</a></li>
+                           <?php }?>
+                           <li><a href="<?php echo URL; ?>grupo/verGrupo">Ver Grupo</a></li>
+                        </ul>
+                      </li>
+                    <?php }?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                       <li class="dropdown">
